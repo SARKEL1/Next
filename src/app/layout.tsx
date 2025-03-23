@@ -1,15 +1,16 @@
-import "./styles/globals.css";
-import Link from "next/link";
+import Link from 'next/link';
+import './styles/globals.css';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body>
         <header>
           <nav>
-            <Link href="/">Home</Link> | 
+            <Link href="/">Strona główna</Link> | 
             <Link href="/about">O nas</Link> | 
-            <Link href="/contact">Kontakt</Link>
+            <Link href="/contact">Kontakt</Link> | 
+            <Link href="/profile">Konto użytkownika</Link>
           </nav>
         </header>
         <main>{children}</main>
@@ -17,4 +18,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
+};
+
+export default Layout;
