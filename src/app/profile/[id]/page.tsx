@@ -4,16 +4,16 @@ import { useRouter } from 'next/navigation';
 import { users } from '../../utils/users';
 import UserLayout from '../../userLayout/userLayout';
 
-const ProfilePage = ({ params }: { params: { id: string } }) => {
+const ProfilePage = async ({ params }: { params: { id: string } }) => {
   const router = useRouter();
-  const userId = parseInt(params.id);
+  const userId = await parseInt(params.id)
   const user = users.find((user) => user.id === userId);
 
   if (!user) {
     return <h1>Użytkownik nie istnieje</h1>;
   }
 
-  const searchParams = new URLSearchParams(router.query as any);
+  const searchParams = new URLSearchParams(router as any);
   const detailId = parseInt(searchParams.get('id') || '');
 
   const detail = detailId ? user.details.find(d => d.id === detailId) : null;

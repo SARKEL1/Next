@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </nav>
         </header>
         <main>{children}</main>
-        <footer>(c) 2025 Firma XYZ</footer>
+        <footer>(c) Bartłomiej Łapiński</footer>
       </body>
     </html>
   );

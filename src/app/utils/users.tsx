@@ -1,4 +1,3 @@
-// src/app/utils/users.ts
 export const users = [
   {
     id: 123,
